@@ -1,0 +1,244 @@
+/* Accessibility Styles for NoPonto */
+
+:root {
+    --access-panel-bg: white;
+    --access-panel-text: #333;
+    --access-panel-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    --access-btn-bg: #f0f0f0;
+    --access-btn-hover: #e0e0e0;
+}
+
+/* Theme Definitions */
+.dark-mode {
+    --primary-color: #ff9d26;
+    --primary-hover: #ffad4d;
+    --secondary-color: #3d94ff;
+    --text-color: #e2e8f0;
+    --light-text: #94a3b8;
+    --white: #1e293b;
+    /* Reversing white to dark */
+    --bg-light: #0f172a;
+    --footer-bg: #020617;
+    --navbar-bg: #1e293b;
+}
+
+.high-contrast {
+    --primary-color: #ffff00;
+    --primary-hover: #ffff00;
+    --secondary-color: #ffff00;
+    --text-color: #ffffff;
+    --light-text: #ffffff;
+    --white: #000000;
+    --bg-light: #000000;
+    --footer-bg: #000000;
+    --navbar-bg: #000000;
+    --border-color: #ffffff;
+}
+
+/* Apply variables to existing elements where needed */
+body.dark-mode,
+body.high-contrast {
+    background-color: var(--bg-light);
+    color: var(--text-color);
+}
+
+body.dark-mode .navbar,
+body.high-contrast .navbar {
+    background: var(--navbar-bg) !important;
+}
+
+body.high-contrast * {
+    border-color: var(--border-color) !important;
+    outline-color: var(--border-color) !important;
+}
+
+/* Swap hero image for accessibility modes while keeping others intact */
+body.dark-mode .hero,
+body.high-contrast .hero {
+    background-image: url('../imagens/onibus2.jpg') !important;
+}
+
+/* Skip Link */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    background: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    z-index: 2000;
+    transition: top 0.3s;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 0 0 5px 0;
+}
+
+.skip-link:focus {
+    top: 0;
+    outline: 3px solid #fff;
+}
+
+/* Visible Focus */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 3px solid var(--secondary-color);
+    outline-offset: 2px;
+}
+
+body.high-contrast a:focus,
+body.high-contrast button:focus {
+    outline: 4px solid #ffff00 !important;
+}
+
+/* Floating Accessibility Menu */
+.access-menu-container {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 9999;
+    font-family: 'Inter', sans-serif;
+}
+
+.access-trigger {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    overflow: hidden;
+}
+
+.access-trigger img {
+    width: 100%;
+    height: 100%;
+}
+
+.access-trigger:hover {
+    transform: scale(1.1);
+}
+
+.access-trigger.active {
+    background-color: #dc3545;
+}
+
+.access-panel {
+    position: absolute;
+    bottom: 80px;
+    left: 0;
+    width: 280px;
+    background: var(--access-panel-bg);
+    color: var(--access-panel-text);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: var(--access-panel-shadow);
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.access-panel.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.access-panel h3 {
+    margin: 0 0 15px 0;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.access-group {
+    margin-bottom: 20px;
+}
+
+.access-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.access-btn-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.access-btn-grid .full {
+    grid-column: span 2;
+}
+
+.access-btn {
+    background: var(--access-btn-bg);
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s;
+    color: var(--access-panel-text);
+}
+
+.access-btn:hover {
+    background: var(--access-btn-hover);
+}
+
+.access-btn:focus {
+    outline: 2px solid var(--secondary-color);
+}
+
+/* Font Size Classes */
+body.fs-small {
+    font-size: 0.9em;
+}
+
+body.fs-medium {
+    font-size: 1em;
+}
+
+/* Default */
+body.fs-large {
+    font-size: 1.2em;
+}
+
+body.fs-xlarge {
+    font-size: 1.4em;
+}
+
+/* Pulse animation for reading */
+.reading-active {
+    outline: 4px solid var(--primary-color) !important;
+    animation: pulse-reading 2s infinite;
+}
+
+@keyframes pulse-reading {
+    0% {
+        outline-color: var(--primary-color);
+    }
+
+    50% {
+        outline-color: transparent;
+    }
+
+    100% {
+        outline-color: var(--primary-color);
+    }
+}

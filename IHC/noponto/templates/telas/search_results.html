@@ -11,13 +11,13 @@
 
         {% if results %}
         <div class="results-list" style="display: grid; gap: 20px;">
-            {{ results }}
             {% for horario in results %}
             <div class="result-card"
                 style="background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; justify-content: space-between; align-items: center;">
                 <div class="bus-info">
-                    <h4 style="font-size: 1.2rem; color: var(--secondary-color);">{{horario.linha.nome}} ({{horario.linha.codigo }})</h4>
-                    <p style="color: var(--light-text); font-size: 0.9rem;">Veículo: {{ horario.onibus.modelo }} - N° {{horario.onibus.numero_veiculo }}</p>
+                    <h4 style="font-size: 1.2rem; color: var(--secondary-color);">{{origin}} ({{destination}})</h4>
+                    <p style="color: var(--light-text); font-size: 0.9rem;">Veículo: {{ horario.onibus.modelo }} - N°
+                        {{horario.onibus.numero_veiculo }}</p>
                 </div>
                 <div class="time-info text-center">
                     <div style="font-size: 1.5rem; font-weight: 700;">{{ horario.horario_saida|time:"H:i" }}</div>
@@ -32,7 +32,7 @@
                 </div>
                 <div class="price-info text-right">
                     <div style="font-size: 1.5rem; font-weight: 800; color: var(--text-color);">R$ {{ horario.linha.tarifa }}</div>
-                    <button class="btn btn-primary" style="margin-top: 10px; width: 100%;">Reservar</button>
+
                 </div>
             </div>
             {% endfor %}
