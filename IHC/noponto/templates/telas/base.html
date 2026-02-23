@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}BusGo - Sua Jornada Começa Aqui{% endblock %}</title>
+    <title>{% block title %}noponto - Sua Viagem Começa Aqui{% endblock %}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -22,15 +22,7 @@
                     Bus<span style="color: var(--primary-color);">Go</span>
                 </a>
             </div>
-            <nav class="nav-links">
-                <a href="{% url 'routes' %}">Rotas</a>
-                <a href="{% url 'offers' %}">Ofertas</a>
-                <a href="{% url 'manage_booking' %}">Gerenciar Reserva</a>
-            </nav>
-            <div class="auth-buttons">
-                <a href="{% url 'login' %}" class="btn btn-outline">Entrar</a>
-                <a href="{% url 'signup' %}" class="btn btn-primary">Cadastrar</a>
-            </div>
+            
         </div>
     </header>
 
@@ -58,39 +50,13 @@
                             Bus<span style="color: var(--primary-color);">Go</span>
                         </a>
                     </div>
-                    <p>Tornando as viagens de longa distância mais fáceis, confortáveis e acessíveis para todos.
-                        Junte-se à revolução das viagens modernas.</p>
+                    <p> Milhares de viajantes já encontram aqui a melhor rota todos os dias economizando tempo e dinheiro em cada viagem..</p>
                 </div>
-                <div class="footer-col">
-                    <h3>Produto</h3>
-                    <ul>
-                        <li><a href="#">Rotas de Ônibus</a></li>
-                        <li><a href="#">Seleção de Assentos</a></li>
-                        <li><a href="#">Classe Premium</a></li>
-                        <li><a href="#">Viagens em Grupo</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h3>Empresa</h3>
-                    <ul>
-                        <li><a href="#">Sobre Nós</a></li>
-                        <li><a href="#">Carreiras</a></li>
-                        <li><a href="#">Parceiros</a></li>
-                        <li><a href="#">Contato</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h3>Ajuda</h3>
-                    <ul>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Política de Privacidade</a></li>
-                        <li><a href="#">Termos de Serviço</a></li>
-                        <li><a href="#">Política de Reembolso</a></li>
-                    </ul>
-                </div>
+    
+                
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 BusGo Travel. Todos os direitos reservados.</p>
+                <p>&copy; Noponto. Todos os direitos reservados.</p>
                 <div class="social-links">
                     <a href="#"><i class="fab fa-facebook"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>

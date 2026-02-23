@@ -96,7 +96,7 @@ body {
 /* Hero Section */
 .hero {
     position: relative;
-    background-image: url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1920&q=80');
+    background-image: url('../imagens/onibus.jpg');
     background-size: cover;
     background-position: center;
     padding: 100px 0;
