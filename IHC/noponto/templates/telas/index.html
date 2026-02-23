@@ -15,7 +15,7 @@
                     <input type="text" name="origin" placeholder="Cidade de Origem" required>
                 </div>
                 <div class="input-group">
-                    <label><i class="fas fa-location-arrow"></i> PARA</label>
+                    <label><i class="fas fa-location-arrow"></i><h3>PARA</h3></label>
                     <input type="text" name="destination" placeholder="Destino" required>
                 </div>
                 
@@ -63,11 +63,11 @@
         </div>
         <p class="section-subtitle">Descubra rotas populares e preços iniciais.</p>
 
-        <div class="destinations-grid">
+
             <div class="destination-card"
-                style="background-image: url('https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=600&q=80');">
-                <div class="card-overlay"></div>
+                 style="background-image: url('{% static 'noponto/imagens/Jurandir.jpg' %}');">
                 <div class="card-info">
+                <div class="card-overlay></div>
                     <h3>Angical do Piauí</h3>
                     <div class="price-tag">
                         <span>De Teresina</span>
@@ -75,8 +75,9 @@
                     </div>
                 </div>
             </div>
+
             <div class="destination-card"
-                style="background-image: url('https://images.unsplash.com/photo-1501466044931-62695aada8e9?auto=format&fit=crop&w=600&q=80');">
+                style="background-image: url('{% static 'noponto/imagens/rio-de-janeiro.jpg'%}');">
                 <div class="card-overlay"></div>
                 <div class="card-info">
                     <h3>Rio de Janeiro.</h3>
@@ -87,7 +88,7 @@
                 </div>
             </div>
             <div class="destination-card"
-                style="background-image: url('https://images.unsplash.com/photo-1541464522988-31b420f688b9?auto=format&fit=crop&w=600&q=80');">
+                style="background-image: url('{% static 'noponto/imagens/jericoacoara.jpg'%}');">
                 <div class="card-overlay"></div>
                 <div class="card-info">
                     <h3>Jericoacoara</h3>
@@ -98,7 +99,7 @@
                 </div>
             </div>
             <div class="destination-card"
-                style="background-image: url('https://images.unsplash.com/photo-1542304291-724558e80738?auto=format&fit=crop&w=600&q=80');">
+                style="background-image: url('{% static 'noponto/imagens/Bento-Goncalves.jpg'%}');">
                 <div class="card-overlay"></div>
                 <div class="card-info">
                     <h3>Bento Gonçalves</h3>
